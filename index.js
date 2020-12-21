@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-const { prefix, token } = require('./config.json');
+// const { prefix, token } = require('./config.json');
 
 const bot = new Discord.Client();
 
@@ -11,9 +11,9 @@ bot.on('ready', () => {
 
 bot.on('message', (message) => {
 
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
+    if (!message.content.startsWith(process.env.PREFIX) || message.author.bot) return;
 
-    const args = message.content.slice(prefix.length).split(/ +/);
+    const args = message.content.slice(process.env.PREFIX.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
     if (command === `ping`) {
