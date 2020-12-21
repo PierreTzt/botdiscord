@@ -1,5 +1,5 @@
 const { Client, Message } = require('discord.js');
-const { TOKEN, PREFIX } = require('./config');
+const { PREFIX } = require('./config');
 const client = new Client();
 
 client.on('ready', () => {
@@ -15,4 +15,4 @@ client.on('message', message => {
     if (message.content.startsWith(`${PREFIX}Hey`)) message.channel.send ("Hey !")
 });
 
-client.login(TOKEN);
+client.login(process.env.TOKEN);
