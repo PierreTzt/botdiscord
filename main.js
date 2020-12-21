@@ -12,8 +12,7 @@ client.on('message', message => {
 );
 
 client.on('message', message => {
-    if (message.content === '${PREFIX}Hey') message.channel.send ("Hey !")
-  }
-);
+    if (message.content.startsWith(`${PREFIX}Hey`)) message.channel.send ("Hey !")
+});
 
-client.login(process.env.TOKEN);
+client.login(TOKEN);
