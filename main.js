@@ -1,5 +1,5 @@
 const { Client, Message } = require('discord.js');
-// const { TOKEN , PREFIX } = require('./config');
+ const { PREFIX } = require('./config');
 const client = new Client();
 
 client.on('ready', () => {
@@ -7,9 +7,9 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    if (!message.content.startsWith("{process.env.PREFIX}") || message.author.bot) return;
+    if (!message.content.startsWith(PREFIX) || message.author.bot) return;
 
-    const args = message.content.slice("${process.env.PREFIX}".length).split(/ +/);
+    const args = message.content.slice(PREFIX.length).split(/ +/);
 
     console.log(args);
 
