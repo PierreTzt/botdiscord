@@ -11,10 +11,10 @@ module.exports = {
         .setDescription("Description pour voir")
         .setThumbnail(client.user.displayAvatarURL())
         //.setField("Je suis un champ", "et la valeur")
-        .setFields(
-          { name : 'Je suis un champ', value : 'champs un', inline: true },
-          { name : 'Je suis deux champs', value : 'champs deux', inline: true }
-        )
+        //.setFields(
+        //  { name : 'Je suis un champ', value : 'champs un', inline: true },
+        //  { name : 'Je suis deux champs', value : 'champs deux', inline: true }
+        //)
         .setImage(client.user.displayAvatarURL())
         .setTimestamps()
         .setFooter("Je suis sur le pied du footer");
