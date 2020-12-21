@@ -16,7 +16,7 @@ module.exports = {
           { name : 'Je suis deux champs', value : 'champs deux', inline: true }
         )
         .setImage(client.user.displayAvatarURL())
-        .setTimestamps()
+        .setTimestamp()
         .setFooter("Je suis sur le pied du footer");
 
         message.channel.send(embed);
