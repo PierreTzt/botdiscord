@@ -6,7 +6,7 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    if (message.content === 'ping') message.reply ('Jsuis pas ton pote')
+    if (message.content === 'Hey') message.reply ('Hey !')
   }
 );
 
