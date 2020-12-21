@@ -10,7 +10,7 @@ module.exports = {
         .setURL("https://google.com")
         .setDescription("Description pour voir")
         .setThumbnail(client.user.displayAvatarURL())
-        .setField("Je suis un champ", "et la valeur")
+        //.setField("Je suis un champ", "et la valeur")
         .setFields(
           { name : 'Je suis un champ', value : 'champs un', inline: true },
           { name : 'Je suis deux champs', value : 'champs deux', inline: true }
