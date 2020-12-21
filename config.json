@@ -1,7 +1,0 @@
-dashbord: {
-    oauthSecret: "process.env.OAUTHSECRET",
-    callbackURL : "localhost:3000:callback",
-    sSecret: "process.env.SSECRET",
-    domain: "localhost",
-    port: "3030"
-},
