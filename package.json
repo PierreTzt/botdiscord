@@ -2,9 +2,9 @@
   "name": "pierre",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "-": "0.0.1",
     "body-parser": "^1.19.0",
