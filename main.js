@@ -7,10 +7,19 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    if (message.content === 'Hey') message.channel.send ("Hey !");
-    if (message.content.startsWith(`${process.env.PREFIX}Hey`)) message.channel.send ("Hey !");
-    if (message.content.startsWith(`${process.env.PREFIX}Bonjour`)) message.channel.send (`Bonjour de la part de tout ${message.guild.name}.`);
-    if (message.content.startsWith(`${process.env.PREFIX}Salut`)) message.author.send (`Salut ${message.author.tag}`);
+    if (!message.content.startsWith("{process.env.PREFIX}") || message.author.bot) return;
+
+    const args = message.content.slice("${process.env.PREFIX}".length).split(/ +/);
+
+    console.log(args);
+
+    const command = args.shift().toLowerCase();
+
+    console.log(command);
+
+    if (command === 'Hey') message.channel.send ("Hey !");
+    if (command === 'Bonjour') message.channel.send (`Bonjour de la part de tout ${message.guild.name}.`);
+    if (command === 'Salut') message.channel.send (`Salut ${message.author.tag}`);
 });
 
 client.login(process.env.TOKEN);
