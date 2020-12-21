@@ -1,2 +1,2 @@
-exports.TOKEN = "changement";
+exports.TOKEN = "changemednt";
 exports.PREFIX = "process.env.PREFIX";
