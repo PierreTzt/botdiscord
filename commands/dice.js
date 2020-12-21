@@ -1,6 +1,6 @@
 const { MessageEmbed, MessageAttachment } = require("discord.js");
 const diceImg = new MessageAttachment('./assets/img/logo.jpg');
-const randomdice = () => Math.floor(Math.random() * 6) + 1;
+const randomDice = () => Math.floor(Math.random() * 6) + 1;
 
 module.exports = {
   name : `dice`,
