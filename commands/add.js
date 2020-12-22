@@ -7,8 +7,8 @@ module.exports = {
           if (message.member.roles.cache.has(role.id)) return message.channel.send("Vous avez déjà ce rôle !");
           if (role.permissions.has('KICK_MEMBERS')) return message.channel.send("Vous ne pouvez pas avoir ce rôle");
 
-          message.member.role.add(role)
-            .then(n => message.channel.send(`Vous possédez maintenant le rôle ${role}.`))
+          message.member.roles.add(role)
+            .then(m => message.channel.send(`Vous possédez maintenant le rôle ${role}.`))
             .cath(e => console.log(e));
         } else {
           message.channel.send("Le rôle n'existe pas!");
