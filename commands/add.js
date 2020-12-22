@@ -9,7 +9,7 @@ module.exports = {
 
           message.member.roles.add(role)
             .then(m => message.channel.send(`Vous possédez maintenant le rôle ${role}.`))
-            .cath(e => console.log(e));
+            .catch(e => console.log(e));
         } else {
           message.channel.send("Le rôle n'existe pas!");
         }
