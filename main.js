@@ -33,7 +33,7 @@ client.on('message', message => {
 
       if (command.help.usage) noArgsReply += `\nVoici comment utiliser la commande : \`${PREFIX}${command.help.name} ${command.help.usage}\``
 
-      return message.channel.send("Pas d'arguments");
+      return message.channel.send(noArgsReply);
     }
 
     command.run(client, message, args);
