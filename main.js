@@ -10,7 +10,7 @@ const loadCommands = (dir = "./commands/") => {
     const commands = readdirSync(`${dir}/${dirs}/`).filter(files => files.endsWith(".js"));
 
     for (const file of commands) {
-      const getFineName = require(`${dir}/${dirs}/${file}`);
+      const getFileName = require(`${dir}/${dirs}/${file}`);
       client.commands.set(getFileName.help.name, getFileName);
       console.log(`Commande chargée : ${getFineName.help.name}`);
     };
