@@ -10,7 +10,7 @@ module.exports = {
             .then(m => message.channel.send(`Vous possédez plus le rôle ${role}.`))
             .catch(e => console.log(e));
         } else {
-          message.channel.send("Vous ne pouvez pas enlever un rôle");
+          message.channel.send("Vous ne pouvez pas enlever un rôle qui n'existe pas");
         }
   }
 }
