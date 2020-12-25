@@ -28,7 +28,7 @@ client.on('message', message => {
     if (!client.commands.has(commandName)) return;
     const command = client.commands.get(commandName);
 
-    if (commandName.help.args && !args.length) {
+    if (command.help.args && !args.length) {
       let noArgsReply = `Il nous faut des arguments pour cette commande, ${message.author}!`;
 
       if (command.help.usage) noArgsReply += `\nVoici comment utiliser la commande : \`${PREFIX}${command.help.name} ${command.help.usage}\``
