@@ -1,5 +1,5 @@
 module.exports.run = (client, message, args) => {
-  message.channe.send=("Pong!");
+  message.channel.send=("Pong!");
 };
 
 module.exports.help = {
