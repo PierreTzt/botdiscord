@@ -24,12 +24,10 @@ client.on('message', message => {
 
     const args = message.content.slice(PREFIX.length).split(/ +/);
     const commandName = args.shift().toLowerCase();
-
+    const user = message.mentions.users.first();
   
     const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.help.aliases && cmd.help.aliases.includes(commandName));
     if (!command) return;
-
-    if (command.help.isUserAdmin && message.guild.member(message.mentions.users.first()).hasPermission('BAN_MEMBERS')) return message.reply("Tu ne peux pas utiliser cette commande!");
 
     if (command.help.permissions && !message.member.hasPermission('BAN_MEMBERS')) return message.reply("Tu n'as pas les permissions pour taper cette commande!");
 
@@ -40,6 +38,10 @@ client.on('message', message => {
 
       return message.channel.send(noArgsReply);
     }
+
+    if (command.help.isUserAdmin && !user) return message.reply('Il faut mentionner un utilisateur.');
+
+    if (command.help.isUserAdmin && message.guild.member(user).hasPermission('BAN_MEMBERS')) return message.reply("Tu ne peux pas utiliser cette commande!");
 
     if (!client.cooldowns.has(command.help.name)) {
       client.cooldowns.set(command.help.name, new Collection());

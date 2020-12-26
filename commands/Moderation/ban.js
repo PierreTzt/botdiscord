@@ -1,8 +1,8 @@
 const { MessageEmbed } = require("discord.js");
 
 module.exports.run = (client, message, args) => {
-  const user = message.mentions.users.first ();
-  const reason = (args.splice(1).join(' ') || 'Aucune raison spécifiée');
+  let user = message.mentions.users.first ();
+  let reason = (args.splice(1).join(' ') || 'Aucune raison spécifiée');
   user ? message.guild.member(user).ban(reason) : message.channel.send("L'utilisateur n'existe pas");
 
   const embed = new MessageEmbed()
@@ -19,9 +19,9 @@ client.channels.cache.get('779443908647714819').send(embed);
 module.exports.help = {
   name: "ban",
   aliases: ['ban'],
-  description: "Kick un utilisateur",
+  description: "Ban un utilisateur",
   cooldown: 10,
-  usage: '<votre_message>',
+  usage: '<@user> <raison>',
   isUserAdmin: true,
   permissions: true,
   args: true
