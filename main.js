@@ -3,7 +3,7 @@ const { PREFIX } = require('./config');
 const { readdirSync } = require("fs");
 
 const client = new Client();
-client.commands = new Collection();
+["commands", "cooldowns"].forEach(x => client[x] = new Collection());
 
 const loadCommands = (dir = "./commands/") => {
   readdirSync(dir).forEach(dirs => {
@@ -36,6 +36,14 @@ client.on('message', message => {
       return message.channel.send(noArgsReply);
     }
 
+    if (!client.cooldowns.has(command.help.name)) {
+      client.cooldowns.set(command.help.name, new Collection());
+    }
+
+    const timeNow = Date.now();
+    const tStamps = client.cooldowns.get(command.help.name);
+    const cdAmount = (command.help.cooldown || 5) * 1000;
+    
     command.run(client, message, args);
 });
 
