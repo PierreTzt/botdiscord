@@ -8,6 +8,7 @@ module.exports.help = {
   description: "Répéte le message d'un utilisateur",
   cooldown: 10,
   usage: '<votre_message>',
+  isUserAdmin: false,
   permissions: false,
   args: true
 };

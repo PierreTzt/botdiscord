@@ -10,6 +10,7 @@ module.exports.help = {
   description: "Kick un utilisateur",
   cooldown: 10,
   usage: '<votre_message>',
-  permissions: false,
+  isUserAdmin: true,
+  permissions: true,
   args: true
 };
