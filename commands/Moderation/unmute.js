@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args) => {
   message.channel.send(`<@${user.id}> n'est plus muté`);
 
   const embed = new MessageEmbed()
-  .setAuthor(`${user.username} (${user.id})`)
+  .setAuthor(`${user.user.username} (${user.id})`)
   .setColor("#ffa500")
   .setDescription(`**Action** : unmute`)
   .setThumbnail(user.user.avatarURL())
