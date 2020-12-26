@@ -25,7 +25,7 @@ module.exports.run = async (client, message, args) => {
   }
 
   await user.roles.add(muteRole.id);
-  message.channel.send(`<@${user.id}> est muté pour ${ms(ms(muteTime))}.`)
+  message.channel.send(`<@${user.id}> est muté pour ${ms(ms(muteTime))}.`);
 
   setTimeout(() => {
     user.roles.remove(muteRole.id);
