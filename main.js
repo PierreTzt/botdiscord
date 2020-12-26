@@ -49,7 +49,7 @@ client.on('message', message => {
 
       if (timeNow < cdExpirationTime) {
         timeLeft = (cdExpirationTime - timeNow) / 1000;
-        return message.reply(`Merci d'attendre ${timeLeft.toFixed(0)} seconde(s) avant de ré-utiliser la commande \`${commande.help.name}\`.`);
+        return message.reply(`Merci d'attendre ${timeLeft.toFixed(0)} seconde(s) avant de ré-utiliser la commande \`${command.help.name}\`.`);
       }
     }
 
