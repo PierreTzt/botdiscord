@@ -54,6 +54,7 @@ client.on('message', message => {
     }
 
     tStamps.set(message.author.id, timeNow);
+    setTimeout(() => tStamps.delete(message.author.id), cdAmount);
 
     command.run(client, message, args);
 });
