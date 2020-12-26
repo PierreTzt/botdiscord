@@ -6,7 +6,7 @@ module.exports.run = async (client, message, args) => {
   let muteRole = message.guild.roles.cache.find(r => r.name === 'muted');
   let muteTime = (args[1] || '60s');
 
-  if(muteRole) {
+  if(!muteRole) {
     muteRole = await message.guild.roles.create({
       data: {
         name: 'muted',
