@@ -44,6 +44,17 @@ client.on('message', message => {
     const tStamps = client.cooldowns.get(command.help.name);
     const cdAmount = (command.help.cooldown || 5) * 1000;
     
+    if (tStamps.has(message.author.id)) {
+      const cdExpirationTime = tStamps.get(message.author.id) + cdAmount;
+
+      if (timeNow < cdExpirationTime) {
+        timeLeft = (cdExpirationTime - timeNow) / 1000;
+        return message.reply(`Merci d'attendre ${timeLeft.toFixed(0)} seconde(s) avant de ré-utiliser la commande \`${commande.help.name}\`.`);
+      }
+    }
+
+    tStamps.set(message.author.id, timeNow);
+
     command.run(client, message, args);
 });
 
