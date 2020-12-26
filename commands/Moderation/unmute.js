@@ -13,7 +13,7 @@ module.exports.run = async (client, message, args) => {
   .setAuthor(`${user.username} (${user.id})`)
   .setColor("#ffa500")
   .setDescription(`**Action** : unmute`)
-  .setThumbnail(user.avatarURL())
+  .setThumbnail(user.user.avatarURL())
   .setTimestamp()
   .setFooter(message.author.username, message.author.avatarURL());
 
