@@ -30,6 +30,16 @@ module.exports.run = async (client, message, args) => {
   setTimeout(() => {
     user.roles.remove(muteRole.id);
   }, ms(muteTime));
+
+  const embed = new MessageEmbed()
+  .setAuthor(`${user.username} (${user.id})`)
+  .setColor("#ffa500")
+  .setDescription(`**Action** : mute\n**Temps** : ${ms(ms(muteTime))}`)
+  .setThumbnail(user.avatarURL())
+  .setTimestamp()
+  .setFooter(message.author.username, message.author.avatarURL());
+
+  client.channels.cache.get('779443908647714819').send(embed);
 };
 
 module.exports.help = {
