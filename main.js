@@ -29,6 +29,8 @@ client.on('message', message => {
     const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.help.aliases && cmd.help.aliases.includes(commandName));
     if (!command) return;
 
+    if (command.help.permissions && !message.member.hasPermission('BAN_MEMBERS')) return message.reply("Tu n'as pas les permissions pour taper cette commande!");
+
     if (command.help.args && !args.length) {
       let noArgsReply = `Il nous faut des arguments pour cette commande, ${message.author}!`;
 
