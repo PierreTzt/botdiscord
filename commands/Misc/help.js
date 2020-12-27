@@ -4,12 +4,11 @@ const { readdirSync } = require("fs");
 const categoryList = readdirSync('./commands');
 
 module.exports.run = (client, message, args) => {
-console.log(client.commands.filter(cat => cat.help.category === categoryList));
 
   if (!args.length) {
     const embed = new MessageEmbed()
       .setColor("#36393F")
-      .addField("Liste des commandes", `Une liste de toutes les sous-catégories disponibles et leurs commandes\nPour plus d'informations sur une commande, taper \`${PREFIX}help <command_name>\``)
+      .addField("Liste des commandes", `Une liste de toutes les sous-catégories disponibles et leurs commandes.\nPour plus d'informations sur une commande, taper \`${PREFIX}help <command_name>\`.`)
 
     for (const category of categoryList) {
       embed.addField(
@@ -18,6 +17,17 @@ console.log(client.commands.filter(cat => cat.help.category === categoryList));
       );
     };
 
+    return message.channel.send(embed);
+  } else {
+    const command = client.commands.get(args[0]) || client.commands.find(cmd => cmd.help.aliases && cmd.help.aliases.includes(args[0]));
+
+    const embed = new MessageEmbed()
+      .setColor("#36393F")
+      .setTitle(`\`${command.help.name}\``)
+      .addField("Descrption", `${command.help.description} (cd: ${command.help.cooldown} secs)`)
+      .addField("Utilisation", command.help.usage ? `${PREFIX}${command.help.name} ${command.help.usage}` : `${PREFIX}${command.help.name}`, true)
+
+    if (command.help.aliases.length > 1) embed.addField("Alias", `${command.help.aliases.join(', ')}`, true);
     return message.channel.send(embed);
   }
 };
