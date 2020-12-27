@@ -13,7 +13,7 @@ console.log(client.commands.filter(cat => cat.help.category === categoryList));
 
     for (const category of categoryList) {
       embed.addField(
-        `${category}`,
+        `${category}`, 
         `${client.commands.filter(cat => cat.help.category === category.toLowerCase()).map(cmd => cmd.help.name).join(', ')}`
       );
     };
