@@ -19,7 +19,7 @@ module.exports.run = (client, message, args) => {
     return message.channel.send(embed);
   } else {
     const command = client.commands.get(args[0]) || client.commands.find(cmd => cmd.help.aliases && cmd.help.aliases.includes(args[0]));
-
+    if (!command) return message.reply("Cette commande n'exsite pas");
     const embed = new MessageEmbed()
       .setColor("#36393F")
       .setTitle(`\`${command.help.name}\``)
