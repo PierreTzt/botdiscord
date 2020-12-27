@@ -18,6 +18,7 @@ client.channels.cache.get('779443908647714819').send(embed);
 module.exports.help = {
   name: "unban",
   aliases: ['unban'],
+  category: 'moderation',
   description: "Unban un utilisateur",
   cooldown: 10,
   usage: '<user_id>',

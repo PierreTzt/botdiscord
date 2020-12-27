@@ -4,7 +4,6 @@ const { readdirSync } = require("fs");
 const categoryList = readdirSync('./commands');
 
 module.exports.run = (client, message, args) => {
-
   if (!args.length) {
     const embed = new MessageEmbed()
       .setColor("#36393F")

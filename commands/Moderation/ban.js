@@ -19,6 +19,7 @@ client.channels.cache.get('779443908647714819').send(embed);
 module.exports.help = {
   name: "ban",
   aliases: ['ban'],
+  category: 'moderation',
   description: "Ban un utilisateur",
   cooldown: 10,
   usage: '<@user> <raison>',
