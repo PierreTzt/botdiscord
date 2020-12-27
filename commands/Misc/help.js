@@ -4,7 +4,7 @@ const { readdirSync } = require("fs");
 const categorylist = readdirSync('./commands');
 
 module.exports.run = (client, message, args) => {
-  if (!args.lenght) {
+  if (!args.length) {
     const embed = new MessageEmbed()
     .setColor("#3639F")
     .addField("Liste des commandes", `Une liste de toutes les sous-catégories disponibles et leurs commandes\nPour plus d'informations sur une commande, taper \`${PREFIX}help <command_name>\``)
