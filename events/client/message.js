@@ -1,5 +1,5 @@
 const { Collection } = require('discord.js');
-const { PREFIX } = require('./config');
+const { PREFIX } = require('../../config');
 
 module.exports = (client, message) => {
   if (!message.content.startsWith(PREFIX) || message.author.bot) return;
