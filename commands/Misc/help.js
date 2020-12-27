@@ -1,7 +1,8 @@
 const { MessageEmbed } = require("discord.js");
 const { PREFIX } = require("../../config");
 const { readdirSync } = require("fs");
-const categorylist = readdirSync('./commands');
+const categoryList = readdirSync('./commands');
+console.log(categoryList);
 
 module.exports.run = (client, message, args) => {
   if (!args.length) {
@@ -9,7 +10,7 @@ module.exports.run = (client, message, args) => {
     .setColor("#3639F")
     .addField("Liste des commandes", `Une liste de toutes les sous-catégories disponibles et leurs commandes\nPour plus d'informations sur une commande, taper \`${PREFIX}help <command_name>\``)
 
-    for (const category of categorylist) {
+    for (const category of categoryList) {
       embed.addField(
         `${category}`,
         `${client.commands.filter(cat => cat.help.category === category.toLowerCase()).map(cmd => cmd.help.name).join(', ')}`
