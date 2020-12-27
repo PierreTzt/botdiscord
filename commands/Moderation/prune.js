@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
   let user = message.guild.member(message.mentions.user.first());
-  if (isNaN(args[0]) || (args[0] <1 || args[0 > 100])) return message.reply('Il faut spcécifier un ***nombre*** entre 1 et 100!');
+  if (isNaN(args[1]) || (args[1] <1 || args[1 > 100])) return message.reply('Il faut spcécifier un ***nombre*** entre 1 et 100!');
 
   const messages = (await message.channel.messages.fetch({
     limit: 100,
@@ -21,7 +21,7 @@ module.exports.run = async (client, message, args) => {
   const embed = new MessageEmbed()
   .setAuthor(message.author.username, message.author.avatarURL())
   .setColor("#dc143c")
-  .setDescription(`**Action** : ourge\n**Nbr de message** : ${args[0]}\n**Salon**: ${message.channel}`)
+  .setDescription(`**Action** : Purge\n**Nbr de message** : ${args[1]}\n**Utilisateur**: ${args[0]}`)
 
   client.channels.cache.get('779443908647714819').send(embed);
 };
