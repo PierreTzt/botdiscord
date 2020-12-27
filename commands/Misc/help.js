@@ -11,16 +11,16 @@ console.log(client.commands.filter(cat => cat.help.category === categoryList));
       .setColor("#36393F")
       .addField("Liste des commandes", `Une liste de toutes les sous-catégories disponibles et leurs commandes\nPour plus d'informations sur une commande, taper \`${PREFIX}help <command_name>\``)
 
-    //for (const category of categoryList) {
-    //  embed.addField(
-    //    `${category}`,
-    //    `${client.commands.filter(cat => cat.help.category === category.toLowerCase()).map(cmd => cmd.help.name).join(', ')}`
-    //  );
+    for (const category of categoryList) {
+      embed.addField(
+        `${category}`,
+        `${client.commands.filter(cat => cat.help.category === category.toLowerCase()).map(cmd => cmd.help.name).join(', ')}`
+      );
     };
 
     //return message.channel.send(embed);
   }
-//};
+};
 
 module.exports.help = {
   name: "help",
