@@ -20,7 +20,7 @@ console.log(client.commands.filter(cat => cat.help.category === categoryList));
 
     return message.channel.send(embed);
   }
-};
+//};
 
 module.exports.help = {
   name: "help",
