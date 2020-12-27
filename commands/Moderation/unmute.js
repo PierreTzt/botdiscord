@@ -10,7 +10,7 @@ module.exports.run = (client, message, args) => {
 
   const embed = new MessageEmbed()
   .setAuthor(`${user.user.username} (${user.id})`, user.user.avatarURL())
-  .setColor("#ffa500")
+  .setColor("#35f092")
   .setDescription(`**Action** : unmute`)
   .setTimestamp()
   .setFooter(message.author.username, message.author.avatarURL());
