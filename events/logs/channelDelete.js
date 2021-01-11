@@ -3,16 +3,16 @@ const { MessageEmbed } = require("discord.js");
 module.exports = async (client, channel) => {
   const fetchGuildAuditLogs = await channel.guild.fetchAuditLogs({
     limit: 1,
-    type : 'CHANNEL_CREATE'
+    type : 'CHANNEL_DELETE'
   });
 
-  const latestChannelCreated = fetchGuildAuditLogs.entries.first();
+  const latestChannelDeleted = fetchGuildAuditLogs.entries.first();
   const { executor } = latestChannelCreated;
 
   const embed = new MessageEmbed()
-  .setAuthor("Création d'un nouveau salon")
-  .setColor("#35f092")
-  .setDescription(`**Action** : Création de salon\n**Salon créé** : ${channel.name}`)
+  .setAuthor("Suppression d'un salon")
+  .setColor("#dc143c")
+  .setDescription(`**Action** : Suppression de salon\n**Salon supprimé** : ${channel.name}`)
   .setTimestamp()
   .setFooter(executor.username, executor.displayAvatarURL());
 
