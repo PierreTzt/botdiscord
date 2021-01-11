@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 
-module.exports = async (client) => {
+module.exports = async (client, message) => {
   const fetchGuildAuditLogs = await message.guild.fetchAuditLogs({
     limit: 1,
     type : 'MESSAGE_DELETE'
