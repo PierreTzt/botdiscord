@@ -1,7 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 
 module.exports = async (client, channel) => {
-  const fetchGuildAuditLogs = await channel.guild.fetchGuildAuditLogs({
+  const fetchGuildAuditLogs = await channel.guild.fetchAuditLogs({
     limit: 1,
     type : 'CHANNEL_CREATE'
   });
