@@ -7,7 +7,7 @@ module.exports = async (client, channel) => {
   });
 
   const latestChannelDeleted = fetchGuildAuditLogs.entries.first();
-  const { executor } = latestChannelCreated;
+  const { executor } = latestChannelDeleted;
 
   const embed = new MessageEmbed()
   .setAuthor("Suppression d'un salon")
