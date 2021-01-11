@@ -15,7 +15,9 @@ module.exports.run = (client, message, args) => {
       `
     );
 
-    message.channel.send(embed)
+    message.channel.send(embed).then(async msg => {
+      await msg.react(fortniteEmoji);
+    })
 };
 
 module.exports.help = {
