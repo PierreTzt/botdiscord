@@ -6,7 +6,7 @@ module.exports.run = (client, message, args) => {
 
   const embed = new MessageEmbed()
     .setTitle("Rôles")
-    .setDescription("Cliquez sur la réaction ci-dessous pour obetnier le rôle")
+    .setDescription("Cliquez sur la réaction ci-dessous pour obtenir le rôle")
     .setColor("#dc143c")
     .addField(
       "Les rôles disponible:",
@@ -15,7 +15,7 @@ module.exports.run = (client, message, args) => {
       `
     );
 
-    message.channel.send(embed).then(async msg => {
+    client.channels.cache.get('779443908647714819').send(embed).then(async msg => {
       await msg.react(fortniteEmoji);
     })
 };
