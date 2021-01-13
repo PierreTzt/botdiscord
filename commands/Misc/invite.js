@@ -21,15 +21,15 @@ const embed = new MessageEmbed()
     .addField(`DiscordDL`,`!$ bump dans le chat ou [ici](https://www.discordl.org/serveurs/778368411620474910)`, true)
     .addField(`1 vote par IP toutes les 2 heures !`,`Et en plus pas besoin d'inscription !`)
 
-client.channels.cache.get('779443908647714819').send(embed);
+message.channel.send(embed);
 
 };
   
   module.exports.help = {
-    name: "invite",
-    aliases: ['invite'],
+    name: "aide",
+    aliases: ['aide'],
     category: 'misc',
-    description: "Le lien pour inviter vos amies!",
+    description: "Comment nous soutenir",
     cooldown: 10,
     usage: '',
     isUserAdmin: false,
