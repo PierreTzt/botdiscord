@@ -6,9 +6,9 @@ const embed = new MessageEmbed()
   .setAuthor("test")
   .setColor("#dc143c")
   .setDescription("test")
-  .setThumbnail(user.avatarURL())
+  //.setThumbnail(user.avatarURL())
   .setTimestamp()
-  .setFooter(message.author.username, message.author.avatarURL());
+  //.setFooter(message.author.username, message.author.avatarURL());
 
 client.channels.cache.get('779443908647714819').send(embed);
 
