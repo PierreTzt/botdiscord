@@ -3,7 +3,7 @@ module.exports = client => {
   client.user.setPresence({
     status: 'online',
     activity: {
-        name: 'Regarde la version 1.0',
+        name: 'la version 1.0',
         type: 'WATCHING',
     }
 });
