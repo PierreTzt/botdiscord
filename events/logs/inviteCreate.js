@@ -12,7 +12,7 @@ module.exports = async (client, channel) => {
   const embed = new MessageEmbed()
   .setAuthor("Création d'une nouvelle invitation")
   .setColor("#35f092")
-  .setDescription(`**Action** : Création d'une nouvelle invitation\n**Code créé** : ${invite.code}`)
+  .setDescription("**Action** : Création d'une nouvelle invitation")
   .setTimestamp()
   .setFooter(executor.username, executor.displayAvatarURL());
 
