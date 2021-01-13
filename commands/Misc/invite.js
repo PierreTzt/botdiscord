@@ -1,6 +1,18 @@
+const { MessageEmbed } = require("discord.js");
+
 module.exports.run = (client, message, args) => {
-    message.channel.send("Pong!");
-  };
+    
+const embed = new MessageEmbed()
+  .setAuthor("test")
+  .setColor("#dc143c")
+  .setDescription("test")
+  .setThumbnail(user.avatarURL())
+  .setTimestamp()
+  .setFooter(message.author.username, message.author.avatarURL());
+
+client.channels.cache.get('779443908647714819').send(embed);
+
+};
   
   module.exports.help = {
     name: "invite",
