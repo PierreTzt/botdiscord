@@ -9,7 +9,7 @@ const embed = new MessageEmbed()
     // .setAuthor(`${this.client.user.tag}`, `${this.client.user.displayAvatarURL()}`, 'https://mtxserv.com/fr/')
     .setDescription(`👍 Tu souhaites nous soutenir ?\n👍 Envie de nous donner un coup de pouce ?\n`)
     // .setFooter("Pied de page du message")
-    .setImage(`https://mtxserv.com/uploads/cover/creer-un-bot-discord-avec-discord-js-discord-191c77d00c4d79bf822422d6a05496bd.jpg`)
+    .setImage(`https://top-serveurs.net/upload/5fbab666bc13f-4564086%20-%20Copy.jpg`)
     // .setThumbnail(`https://mtxserv.com/uploads/banners/ae49ad104085151cbb44e27fffd9f16862cb6f2c.png`)
     // .setTimestamp() // Vous pouvez passer un objet Date() en argument
     // Fields
@@ -19,7 +19,7 @@ const embed = new MessageEmbed()
     .addField(`Top-Serveur`,`[ici](https://top-serveurs.net/discord/corner-geek)`, true)
     .addField(`Disbord`,`!d bump dans le chat`, true)
     .addField(`DiscordDL`,`!$ bump dans le chat ou [ici](https://www.discordl.org/serveurs/778368411620474910)`, true)
-    .addField(`1 vote par IP toutes les 2 heures !`)
+    .addField(`1 vote par IP toutes les 2 heures !,Et en plus pas besoin d'inscription !`)
 
 client.channels.cache.get('779443908647714819').send(embed);
 
