@@ -19,7 +19,7 @@ const embed = new MessageEmbed()
     .addField(`Top-Serveur`,`[ici](https://top-serveurs.net/discord/corner-geek)`, true)
     .addField(`Disbord`,`!d bump dans le chat`, true)
     .addField(`DiscordDL`,`!$ bump dans le chat ou [ici](https://www.discordl.org/serveurs/778368411620474910)`, true)
-    .addField(`1 vote par IP toutes les 2 heures !,Et en plus pas besoin d'inscription !`)
+    .addField(`1 vote par IP toutes les 2 heures !`,`Et en plus pas besoin d'inscription !`)
 
 client.channels.cache.get('779443908647714819').send(embed);
 
