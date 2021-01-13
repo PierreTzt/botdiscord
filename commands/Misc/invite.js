@@ -3,8 +3,8 @@ const { MessageEmbed } = require("discord.js");
 module.exports.run = (client, message, args) => {
     
 const embed = new MessageEmbed()
-    .setColor(`BLUE`) // ou .setColor(`#0099ff`)
-    .setTitle(`INVITATION`)
+    .setColor(`YELLOW`) // ou .setColor(`#0099ff`)
+    .setTitle(`COMMENT VOTER`)
     .setAuthor(`Corner Geek`, `https://cdn.discordapp.com/emojis/790939549681057814.png`)
     // .setAuthor(`${this.client.user.tag}`, `${this.client.user.displayAvatarURL()}`, 'https://mtxserv.com/fr/')
     .setDescription(`👍 Tu souhaites nous soutenir ?\n👍 Envie de nous donner un coup de pouce ?\n`)
@@ -26,8 +26,8 @@ message.channel.send(embed);
 };
   
   module.exports.help = {
-    name: "aide",
-    aliases: ['aide'],
+    name: "vote",
+    aliases: ['vote'],
     category: 'misc',
     description: "Comment nous soutenir",
     cooldown: 10,
