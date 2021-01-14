@@ -21,7 +21,9 @@ const embed = new MessageEmbed()
     .addField(`DiscordDL`,`$bump dans le chat ou [ici](https://www.discordl.org/serveurs/778368411620474910)`, true)
     .addField(`1 vote par IP toutes les 2 heures !`,`Et en plus pas besoin d'inscription !`)
 
-message.channel.send(embed);
+message.channel.send(embed).then(msg => {
+  msg.react('✅')
+}
 
 };
   
