@@ -4,7 +4,7 @@ module.exports.run = async (client, message, args, settings) => {
   const getSetting = args[0];
   const newSetting = args.slice(1).join (" ");
   
-  switch (getSettings) {
+  switch (getSetting) {
     case "prefix": {
       if (newSetting) {
         await client.updateGuild(message.guild, { prefix: newSetting });
