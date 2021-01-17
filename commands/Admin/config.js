@@ -1,8 +1,8 @@
 const { MESSAGES } = require("../../util/constants");
 
 module.exports.run = async (client, message, args, settings) => {
-  const getSettings = args[0];
-  const newSettings = args.slice(1).join (" ");
+  const getSetting = args[0];
+  const newSetting = args.slice(1).join (" ");
   
   switch (getSettings) {
     case "prefix": {
