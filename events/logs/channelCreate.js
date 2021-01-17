@@ -1,6 +1,8 @@
 const { MessageEmbed } = require("discord.js");
 
 module.exports = async (client, channel) => {
+  if (channel.type === "dm") return;
+  else {
   const fetchGuildAuditLogs = await channel.guild.fetchAuditLogs({
     limit: 1,
     type : 'CHANNEL_CREATE'
@@ -17,4 +19,5 @@ module.exports = async (client, channel) => {
   .setFooter(executor.username, executor.displayAvatarURL());
 
 client.channels.cache.get('779443908647714819').send(embed);
+  }
 }
