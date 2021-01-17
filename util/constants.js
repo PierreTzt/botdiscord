@@ -22,7 +22,7 @@ const MESSAGES = {
         usage: '<key> <value>',
         isUserAdmin: false,
         permissions: true,
-        args: false
+        args: true
       }
     },
     MISC : {
