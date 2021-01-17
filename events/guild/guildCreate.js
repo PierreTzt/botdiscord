@@ -4,5 +4,5 @@ module.exports = async (client, guild) => {
     guildName: guild.name
   };
 
-  away.client.createGuild(newGuild);
+  await client.createGuild(newGuild);
 };
