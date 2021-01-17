@@ -11,6 +11,18 @@ const MESSAGES = {
         isUserAdmin: false,
         permissions: false,
         args: true
+      },
+    
+    PING : {
+      name: "ping",
+      aliases: ['ping'],
+      category: 'misc',
+      description: "Renvoie pong!",
+      cooldown: 10,
+      usage: '',
+      isUserAdmin: false,
+      permissions: true,
+      args: false
       }
     }
   }
