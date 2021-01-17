@@ -11,5 +11,6 @@ module.exports = (client, message) => {
     .setTimestamp()
     .setFooter(message.author.username, message.author.avatarURL());
 
+  user.send("Nous avons recu votre ticket, on vous répondra tes que possible.")
   client.channels.cache.get('779443908647714819').send(embed);
 }
