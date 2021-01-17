@@ -1,5 +1,5 @@
 Bot Discord pour l'administration d'un server
-
+/n
 Commandes disponibles pour le moment :
 !ping => réponse : Jsuis pas ton pote !
 !avatar => Renvoi le lien ainsi que la photo de l'avatar de son profil
