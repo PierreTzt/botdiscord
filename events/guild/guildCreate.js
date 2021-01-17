@@ -5,7 +5,7 @@ const { Guild } = require("../../models/index");
 module.exports = async (client, guild) => {
   const newGuild = {
     guildID: guild.id,
-    guildName: GuildAuditLogs.name
+    guildName: Guild.name
   };
 
   const merged = Object.assign({ _id: mongoose.Types.ObjectId() }, newGuild);
