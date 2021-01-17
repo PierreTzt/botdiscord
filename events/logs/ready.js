@@ -10,7 +10,7 @@ module.exports = (client) => {
     }
 });
 
-bot.on('message', message => {
+client.on('message', message => {
         if(message.author.bot) {
           return null                 //returns nothing if the message author is the bot
       
