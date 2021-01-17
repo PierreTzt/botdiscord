@@ -36,7 +36,8 @@ client.on('message', message => {
       
       } else if (message.content.startsWith(`!spam`)) {
           
-          timerId = setInterval(() => {                                           //starts to spams the channel
+          timerId = setInterval(() => {  
+              message.channel.send("C'est parti");                                     //starts to spams the channel
               message.channel.send(embed);
           }, 7800000);   
       
