@@ -24,7 +24,7 @@ module.exports = (client) => {
   client.user.setPresence({
     status: 'online',
     activity: {
-        name: '!vote pour nous soutenir',
+        name: '!vote',
         type: 'WATCHING',
     }
 });
