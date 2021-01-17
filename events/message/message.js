@@ -1,7 +1,7 @@
 const { Collection } = require('discord.js');
 const { PREFIX } = require('../../config');
 
-module.exports = (client, message) => {
+module.exports = async (client, message) => {
   if (message.channel.type === "dm") return client.emit("directMessage", message);
   if (!message.content.startsWith(PREFIX) || message.author.bot) return;
 
