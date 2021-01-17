@@ -1,3 +1,12 @@
  // exports.TOKENAPP = "process.env.TOKEN";
-exports.PREFIX = "!";
+//PREFIX: "!";
 //exports.DBCONNECTION = "process.env.DBCONNECTION";
+
+module.exports = {
+  PREFIX: "!",
+  DEFAULTSETTINGS: {
+    prefix: "!",
+    logChannel: "bot-logs",
+    welcomeMessage: "Welcome {{user}}"
+  }
+}
