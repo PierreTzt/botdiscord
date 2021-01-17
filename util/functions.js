@@ -7,4 +7,10 @@ module.exports = async client => {
   const createGuild = await new Guild(merged);
   createGuild.save().then(g => console.log(`Nouveau serveur => ${g.guildName}`));
   }
+
+  client.getGuild = async guild => {
+    const data = await Guild.findOne({ guildID: guild.id});
+    if (data) return data;
+    return client.config.defaultSettings;
+  };
 };

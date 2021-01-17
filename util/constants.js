@@ -11,6 +11,18 @@ const MESSAGES = {
         isUserAdmin: false,
         permissions: true,
         args: true
+      },
+
+      CONFIG: {
+        name: "config",
+        aliases: ['config'],
+        category: 'admin',
+        description: "Modifier la base de données",
+        cooldown: 3,
+        usage: '<key> <value>',
+        isUserAdmin: false,
+        permissions: true,
+        args: false
       }
     },
     MISC : {
