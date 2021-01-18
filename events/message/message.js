@@ -1,14 +1,13 @@
 const { Collection } = require('discord.js');
-const { PREFIX } = require('../../config');
 
 module.exports = async (client, message) => {
   if (message.channel.type === "dm") return client.emit("directMessage", message);
-  if (!message.content.startsWith(PREFIX) || message.author.bot) return;
+  if (!message.content.startsWith(client.config.PREFIX) || message.author.bot) return;
 
     const settings = await client.getGuild(message.guild);
 
 
-    const args = message.content.slice(PREFIX.length).split(/ +/);
+    const args = message.content.slice(client.config.PREFIX.length).split(/ +/);
     const commandName = args.shift().toLowerCase();
     const user = message.mentions.users.first();
   
@@ -20,7 +19,7 @@ module.exports = async (client, message) => {
     if (command.help.args && !args.length) {
       let noArgsReply = `Il nous faut des arguments pour cette commande, ${message.author}!`;
 
-      if (command.help.usage) noArgsReply += `\nVoici comment utiliser la commande : \`${PREFIX}${command.help.name} ${command.help.usage}\``
+      if (command.help.usage) noArgsReply += `\nVoici comment utiliser la commande : \`$client.config.PREFIX}${command.help.name} ${command.help.usage}\``
 
       return message.channel.send(noArgsReply);
     }
