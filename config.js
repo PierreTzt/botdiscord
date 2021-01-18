@@ -5,7 +5,7 @@
 module.exports = {
   PREFIX: "!",
   DEFAULTSETTINGS: {
-//    prefix: "!",
+    prefix: "!",
     logChannel: "bot-logs",
     welcomeMessage: "Welcome {{user}}"
   }
