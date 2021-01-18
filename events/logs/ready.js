@@ -28,26 +28,4 @@ module.exports = (client) => {
         type: 'WATCHING',
     }
 });
-
-client.on('message', message => {
-        if(message.author.bot) {
-          return null                 //returns nothing if the message author is the bot
-        
-      
-      } else if (message.content.startsWith(`!spam`)) {
-          
-          timerId = setInterval(() => {  
-              message.channel.send("C'est parti");                                     //starts to spams the channel
-              message.channel.send(embed);
-          }, 7800000);   
-      
-      
-      } else if (message.content.startsWith(`!stop`)) {
-      
-          clearInterval(timerId);
-          message.channel.send('condition met');
-      
-      }
-    }
-)
 }
