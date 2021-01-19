@@ -1,5 +1,4 @@
 const { Client, Collection } = require('discord.js');
-//const { PREFIX } = require('./config');
 const { loadCommands, loadEvents } = require("./util/loader")
 
 const client = new Client();
